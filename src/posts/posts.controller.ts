@@ -11,22 +11,22 @@ export default class PostsController {
 
     @Get()
     getAllPosts() {
-        this.postService.getAllPosts();
+        return this.postService.getAllPosts();
     }
 
     @Get(':id') 
     getPostById(@Param('id') id: string) {
-        this.postService.getPostById(Number(id));
+        return this.postService.getPostById(Number(id));
     }
 
     @Post()
     async createPost(@Body() post: CreatePostDto) {
-        this.postService.createPost(post);
+        return this.postService.createPost(post);
     }
 
     @Put(':id')
     async replacePost(@Param('id') id: string, @Body() post: UpdatePostDto) {
-        this.postService.replacePost(Number(id), post);
+        return this.postService.replacePost(Number(id), post);
     }
 
     @Delete(':id')
