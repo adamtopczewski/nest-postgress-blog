@@ -6,7 +6,7 @@ services:
     ports:
     - "5432:5432"
     volumes:
-    - ~/Develop/postgress_nest_data:/data/postgres
+    - /var/tmp/docker/postgres:/data/postgres
     env_file:
     - docker.env
     networks:
@@ -20,7 +20,7 @@ services:
     ports:
     - "8080:80"
     volumes:
-    - ~/Develop/pg_admin_nest_data:/root/.pgadmin
+    - /var/tmp/docker/pgadmin:/root/.pgadmin
     env_file:
     - docker.env
     networks:
